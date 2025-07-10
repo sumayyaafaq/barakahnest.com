@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shop | Barakah Nest</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Barakah Nest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="custom.html">Custom Orders</a>
+      <a href="track.html">Track Order</a>
+      <a href="contact.html">Contact</a>
+	  <a href="wishlist.html" class="active" title="Wishlist">❤️</a>
+	   <a href="cart.html" title="View Cart"><i class="fas fa-shopping-cart"></i></a>
+    </div>
+  </nav>
+
+  <section class="section">
+  <!-- Category Banner -->
+  <div class="category-banner">
+    <h2>Ameen Gifts | Baby Girl | Eid Mubarak</h2>
+  </div>
+
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <label for="occasion">Occasion:</label>
+    <select id="occasion">
+      <option>All</option>
+      <option>Ramadan</option>
+      <option>Nikkah</option>
+      <option>Baby</option>
+      <option>Eid</option>
+    </select>
+
+    <label for="recipient">Recipient:</label>
+    <select id="recipient">
+      <option>All</option>
+      <option>Men</option>
+      <option>Women</option>
+      <option>Kids</option>
+    </select>
+
+    <label for="style">Packaging Style:</label>
+    <select id="style">
+      <option>All</option>
+      <option>Minimal</option>
+      <option>Luxury</option>
+      <option>Traditional</option>
+    </select>
+  </div>
+</section>
+
+
+  <!-- Product Grid -->
+  <section class="section">
+    <h2 class="section-title">All Products</h2>
+    <div class="product-grid">
+
+      <div class="product-card">
+        <img src="assets/products/ramadan-box.jpg" alt="Ramadan Box">
+        <h3>Ramadan Blessings Box</h3>
+        <p>A thoughtful gift filled with dates, prayer essentials & duas.</p>
+        <button onclick="addToCart('Ramadan Blessings Box', 75)">Add to Cart 🛒</button> 
+        <button onclick="addToWishlist('Ramadan Blessings Box', 75)">❤️ Wishlist</button>
+		<a href="cart.html" class="btn">View Cart</a>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/products/nikkah-gift.jpg" alt="Nikkah Gift">
+        <h3>Nikkah Mubarak Hamper</h3>
+        <p>Celebrate their union with elegance and duas.</p>
+        <button onclick="addToCart('Nikkah Mubarak Hamper', 50)">Add to Cart 🛒</button>
+        <button onclick="addToWishlist('Nikkah Mubarak Hamper', 50)">❤️ Wishlist</button>
+		<a href="cart.html" class="btn">View Cart</a>
+      </div>
+
+      <div class="product-card">
+        <img src="assets/products/ameen-baby.jpg" alt="Ameen Gift">
+        <h3>Ameen Baby Girl Gift</h3>
+        <p>Soft pink keepsake items with Quranic prints.</p>
+        <button onclick="addToCart('Ameen Baby Girl Gift', 25)">Add to Cart 🛒</button>
+        <button onclick="addToWishlist('Ameen Baby Girl Gift', 25)">❤️ Wishlist</button>
+		<a href="cart.html" class="btn">View Cart</a>
+      </div>
+
+      <!-- Add more cards as needed -->
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Barakah Nest. All rights reserved.</p>
+    <p>Email: <a href="mailto:info@barakahnest.com">info@barakahnest.com</a> | WhatsApp: +971 50 123 4567</p>
+    <p>Follow us: <a href="#">Instagram</a></p>
+  </footer>
+
+</body>
+</html>

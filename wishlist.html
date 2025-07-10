@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wishlist | Barakah Nest</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .wishlist-container {
+      max-width: 800px;
+      margin: 3rem auto;
+    }
+    .wishlist-item {
+      background: #fff0f4;
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin-bottom: 1.2rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
+    .wishlist-item h4 {
+      margin-bottom: 0.4rem;
+      color: #f05da3;
+    }
+    .wishlist-item p {
+      margin: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+    .wishlist-item button {
+      background: #f05da3;
+      color: white;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      margin-top: 0.6rem;
+      cursor: pointer;
+    }
+    .wishlist-item button:hover {
+      background: #d94a92;
+    }
+    #empty-msg {
+      text-align: center;
+      color: #777;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Barakah Nest</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="about.html">About</a>
+      <a href="custom.html">Custom Orders</a>
+      <a href="track.html">Track Order</a>
+      <a href="contact.html">Contact</a>
+      <a href="wishlist.html" class="active" title="Wishlist">❤️</a>
+      <a href="cart.html" title="Cart">🛒</a>
+        </nav>
+  </header>
+
+  <!-- Wishlist Section -->
+  <section class="section wishlist-container">
+    <h2 class="section-title">Your Wishlist</h2>
+    <div id="wishlist-container"></div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const container = document.getElementById('wishlist-container');
+      const wishlist = JSON.parse(localStorage.getItem('barakahWishlist')) || [];
+
+      if (!wishlist.length) {
+        container.innerHTML = '<p id="empty-msg">Your wishlist is empty 🤍</p>';
+        return;
+      }
+
+      wishlist.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'wishlist-item';
+        div.innerHTML = `
+          <h4>${item.name}</h4>
+          <p>Price: AED ${item.price}</p>
+          <button onclick="removeWishlistItem(${index})">Remove</button>
+        `;
+        container.appendChild(div);
+      });
+    });
+
+    function removeWishlistItem(index) {
+      const wishlist = JSON.parse(localStorage.getItem('barakahWishlist')) || [];
+      wishlist.splice(index, 1);
+      localStorage.setItem('barakahWishlist', JSON.stringify(wishlist));
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
